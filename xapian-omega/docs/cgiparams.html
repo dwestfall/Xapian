@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>CGI parameters to Omega</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 5196 2007-06-03 20:25:28Z wiemann $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="cgi-parameters-to-omega">
+<h1 class="title">CGI parameters to Omega</h1>
+
+<p>In addition to the parameters listed here, all other parameters are
+retained. Arbitrary CGI parameters may be read with the $cgi{PARAM}
+and $cgilist{PARAM} OmegaScript commands.</p>
+<p>Note that all CGI parameters are modified by Omega before they become
+part of $cgilist{} - see the section at the end for details.</p>
+<div class="section" id="main-query-parameters">
+<h1>Main query parameters</h1>
+<dl class="docutils">
+<dt>DB</dt>
+<dd>database name.  If the DB parameter is specified more than once, each
+value is used to allow searching over multiple databases.  Also, the
+value of each DB parameter may be a list of database names separated by
+&quot;/&quot;.  If no DB parameters are specified, then the database name
+defaults to <tt class="docutils literal"><span class="pre">default</span></tt>.  If you want to search over a combination
+of databases by default then you can make the <tt class="docutils literal"><span class="pre">default</span></tt> database a
+stub database file - see the &quot;Overview&quot; document in xapian-core for
+details of the format.</dd>
+<dt>xDB</dt>
+<dd>database(s) used for last query (separated by / if appropriate).
+If the database(s) used change then relevance judgements are
+discarded and the first page of matches is shown.</dd>
+<dt>DEFAULTOP</dt>
+<dd>default operator - values recognised &quot;AND&quot;, &quot;and&quot;, &quot;OR&quot;, &quot;or&quot;.
+Default: OR.  If you want to implement &quot;match all words&quot;, set
+DEFAULTOP=AND.</dd>
+<dt>P</dt>
+<dd>probabilistic query (may occur multiple times).</dd>
+<dt>xP</dt>
+<dd>terms from previous probabilistic query - used to decide if
+this is a fresh query (in which case relevance judgements are
+discarded and the first page of matches is shown), an extended query
+(in which case the first page of matches is shown), or an unchanged
+query.</dd>
+<dt>ADD</dt>
+<dd>if present, any X parameters are added to the probabilistic
+query (used for topterms support when JavaScript isn't
+supported or is disabled).</dd>
+<dt>X</dt>
+<dd>topterms to add to query.</dd>
+<dt>R</dt>
+<dd>relevant document(s) (multiple values separated by &quot;.&quot;)</dd>
+<dt>MORELIKE</dt>
+<dd>value is a document id to return similar pages to, or a term name
+(which will be looked up and the document id of the first document it
+indexes will be used - this allows a MORELIKE query based on the
+unique id from an external database)</dd>
+<dt>RAWSEARCH</dt>
+<dd>when set to non-zero value, this prevents TOPDOC being snapped to a
+multiple of HITSPERPAGE.  Normally we snap TOPDOC like this so that
+things work nicely if HITSPERPAGE is in a picker or on radio buttons.
+If we're postprocessing the output of omega and want variable sized
+pages, this is unhelpful.</dd>
+<dt>MINHITS</dt>
+<dd>can be set to look for more matches than would otherwise be looked for
+to you can be sure how many more consecutive pages will definitely be
+needed to show results.  By default omega asks for one hit more than
+the last one displayed on this page (so we know for sure if there is a
+next page or not).  If MINHITS is set, we ask for at least MINHITS
+matches from the start of the current page - you can think of MINHITS
+as defaulting to (HITSPERPAGE + 1).</dd>
+</dl>
+</div>
+<div class="section" id="filtering-parameters">
+<h1>Filtering parameters</h1>
+<dl class="docutils">
+<dt>B</dt>
+<dd>general boolean filter terms.  See the <a class="reference external" href="overview.html">overview document</a> for details of how multiple B parameters are handled.</dd>
+<dt>COLLAPSE</dt>
+<dd>value number to use for removing duplicate documents.
+Additional documents in the MSet with the same value will be
+removed from the MSet. $value{$cgi{COLLAPSE}} can be used to
+access the actual value for each hit.</dd>
+<dt>DATEVALUE</dt>
+<dd>value number to use for date range filtering.  If this isn't set then
+date filtering will use the older approach based on D-, M-, and
+Y-prefixed terms.  The values must be of the format YYYYMMDDHHMM
+(e.g. 200702142359), YYYYMMDD (e.g. 20070214), or a raw 4 byte
+big-endian value representing a time_t (omindex adds this as value 0
+by default).</dd>
+<dt>SPAN</dt>
+<dd>filter on this number of days up to END (if set), or after
+START (if set), or before today's date (otherwise).</dd>
+<dt>START</dt>
+<dd>start of date range, in the format YYYYMMDD (defaults to 1st January
+1970).  If value-based date ranges are used (see DATEVALUE parameter)
+then the format YYYYMMDDHHMM is also valid.</dd>
+<dt>END</dt>
+<dd>end of date range, in the format YYYYMMDD (defaults to today's date).
+If value-based date ranges are used (see DATEVALUE parameter) then the
+format YYYYMMDDHHMM is also valid.</dd>
+<dt>xFILTERS</dt>
+<dd>used to spot when the filters have changed from the previous search.
+Set this to $html{$filters} in your query template ($filters is a
+compact serialisation of the currently set B filters, date-range
+filters, COLLAPSE, and DEFAULTOP).</dd>
+<dt>THRESHOLD</dt>
+<dd>apply a percentage cut-off at the value given by this parameter
+(clipped to the range 0-100).</dd>
+</dl>
+</div>
+<div class="section" id="reordering-parameters">
+<h1>Reordering parameters</h1>
+<dl class="docutils">
+<dt>SORT</dt>
+<dd>reorder results by this value number (greater values are better).
+The comparison used is a string compare.</dd>
+<dt>SORTREVERSE</dt>
+<dd>if non-zero, reverse the sort order so that lower values are better.
+This parameter has no effect unless SORT is also specified.</dd>
+<dt>SORTAFTER</dt>
+<dd>if non-zero, order results by relevance, only sorting by value to
+order values with the same relevance score.  This parameter has no
+effect unless SORT is also specified.</dd>
+<dt>DOCIDORDER</dt>
+<dd>set the ordering used when a comparison ends up being by docid (i.e.
+two documents with equal relevance and/or values).  By default (if
+DOCIDORDER isn't set or is empty) this puts them in ASCENDING order
+(the lowest document id ranks highest).  If DOCIDORDER is specified
+and non-empty it can begin with &quot;D&quot; for DESCENDING order, &quot;A&quot; for
+ASCENDING order or any other character for DONT_CARE (the Xapian
+database backend will use whichever order is most efficient).  Any
+characters after the first are ignored.</dd>
+</dl>
+</div>
+<div class="section" id="display-parameters-and-navigation">
+<h1>Display parameters and navigation</h1>
+<dl class="docutils">
+<dt>FMT</dt>
+<dd>name of page format to use (may not contain <tt class="docutils literal"><span class="pre">..</span></tt>).</dd>
+<dt>HITSPERPAGE</dt>
+<dd>hits per page (integer) - clipped to range 10-1000.</dd>
+<dt>TOPDOC</dt>
+<dd>first document to display (snapped to multiple of HITSPERPAGE
+if RAWSEARCH is not set)</dd>
+</dl>
+<p>If a parameter named '&lt;' or '&gt;' exists, Omega will go to the previous
+or next results page (based on the value of TOPDOC), respectively. If
+not, and a parameter named '[' or '#' exists, it will jump to the page
+number given by that parameter (trailing junk after the number is
+ignored). (See the section below on modification of CGI parameters to
+see how this works.)</p>
+<p>This means that &lt;input type='image' .../&gt; form buttons can have names
+of the form '[ 3 ]', which looks nice in lynx, for tooltips, and so
+on. For text-only links, you really need to write out the entire GET
+parameters and use a normal anchor.</p>
+</div>
+<div class="section" id="modification-of-cgi-parameters">
+<h1>Modification of CGI parameters</h1>
+<p>For an image button, two CGI parameters are passed from the HTML
+client, of the form &quot;PARAM.x&quot; and &quot;PARAM.y&quot; (the x and y coordinates
+within the image that were clicked).</p>
+<p>The PARAM part of the parameters are taken from the value attribute of
+the &lt;input&gt; element that specified that image button in the HTML
+page. We regularly use image buttons to provide pretty navigation
+within search results (they are part of a form because it is easier to
+treat more or less all of Omega as a single form, rather than
+generating very long GET requests for every button on the results
+page), so Omega does some mangling of these parameters:</p>
+<blockquote>
+<ul>
+<li><p class="first">PARAM.y is silently dropped</p>
+</li>
+<li><p class="first">PARAM.x is truncated to PARAM</p>
+</li>
+<li><dl class="first docutils">
+<dt>if PARAM contains a space (the CGI parameter name, not the value):</dt>
+<dd><ul class="first last simple">
+<li>the value becomes everything after the first space; the
+original value is dropped. (e.g.: [ 2 ].x=NNN becomes [=2 ])</li>
+</ul>
+</dd>
+<dt>otherwise:</dt>
+<dd><ul class="first last simple">
+<li>if PARAM is entirely numeric, the name becomes '#' and the value
+becomes PARAM. (e.g.: 2.x=NNN becomes #=2)</li>
+<li>if PARAM is not entirely numeric, the value is copied from PARAM
+(e.g.: &gt;.x=NNN becomes &gt;=&gt;)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</blockquote>
+<p>Then, for ALL CGI parameters, the name is truncated at the first
+space. So [ page two ]=2 becomes [=2.</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>OmegaScript</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 5196 2007-06-03 20:25:28Z wiemann $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="omegascript">
+<h1 class="title">OmegaScript</h1>
+
+<p>OmegaScript adds processed text-generation commands to text templates
+(which will usually be HTML, but can be XML or another textual format).
+Commands take the form <tt class="docutils literal"><span class="pre">$command{comma,separated,arguments}</span></tt> or
+<tt class="docutils literal"><span class="pre">$simplecommand</span></tt>, for example:</p>
+<pre class="literal-block">
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;Sample&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+
+&lt;p&gt;
+You searched for '$html{$query}'.
+&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>Where appropriate, arguments themselves can contain OmegaScript commands.
+Where an argument is treated as a string, the string is precisely the contents
+of that argument - there is no string delimiter (such as the double-quote
+character '&quot;' in C and similar languages).  This can make complex OmegaScript
+slightly difficult to read at times.</p>
+<p>When a command takes no arguments, the braces must be omitted (i.e.
+$simplecommand rather than $simplecommand{} - the latter is a command with a
+single empty argument).  If you want to have the value of $simplecommand
+immediately followed by a letter, digit, or &quot;_&quot;, you can use a comment to
+prevent the parser treating the following character as part of a command name.
+E.g. $simplecommand${}k rather than $simplecommandk</p>
+<p>It is important to realise that all whitespace is significant in OmegaScript
+- e.g. if you put whitespace around a &quot;,&quot; which separates two command arguments
+then the whitespace will be part of the respective arguments.</p>
+<p>Note that (by design) OmegaScript has no unbounded looping constructs.  You
+can loop over entries in a list, but you can't loop until some arbitrary
+condition is met.  This means that it's not possible to accidentally (or
+deliberately!) write an OmegaScript template which contains an infinite loop.</p>
+<div class="section" id="omegascript-literals">
+<h1>OmegaScript literals</h1>
+<pre class="literal-block">
+$$ - literal '$'
+$( - literal '{'
+$) - literal '}'
+$. - literal ','
+</pre>
+</div>
+<div class="section" id="omegascript-commands">
+<h1>OmegaScript commands</h1>
+<p>In the following descriptions, a LIST is a string of tab-separated
+values.</p>
+<dl class="docutils">
+<dt>${...}</dt>
+<dd>commented-out code</dd>
+<dt>$addfilter{TERM}</dt>
+<dd>add filter term <tt class="docutils literal"><span class="pre">TERM</span></tt> as if it had been passed as a <tt class="docutils literal"><span class="pre">B</span></tt> CGI
+parameter.  You must use <tt class="docutils literal"><span class="pre">$addfilter</span></tt> before any command which
+requires the query to have been parsed - see <tt class="docutils literal"><span class="pre">$setmap</span></tt> for a list
+of these commands.</dd>
+<dt>$allterms{docid}</dt>
+<dd>list of all terms matching document</dd>
+<dt>$cgi{CGI}</dt>
+<dd>lookup the value of a CGI parameter.  If the same parameter has
+multiple values, <tt class="docutils literal"><span class="pre">$cgi</span></tt> will pick one arbitrarily - use <tt class="docutils literal"><span class="pre">$cgilist</span></tt>
+if you want all the values.</dd>
+<dt>$cgilist{CGI}</dt>
+<dd>return a list of all values of a CGI parameter</dd>
+<dt>$collapsed</dt>
+<dd><p class="first">number of other documents collapsed into current hit inside
+<tt class="docutils literal"><span class="pre">$hitlist</span></tt>, which might be used like so:</p>
+<pre class="last literal-block">
+$if{$ne{$collapsed,0},at least $collapsed hidden results ($value{$cgi{COLLAPSE}})}
+</pre>
+</dd>
+<dt>$date{TIME_T[,FMT]}</dt>
+<dd>convert a time_t to strftime <tt class="docutils literal"><span class="pre">FMT</span></tt> (default: <tt class="docutils literal"><span class="pre">YYYY-MM-DD</span></tt>).  The
+conversion is done in timezone UTC.</dd>
+<dt>$dbname</dt>
+<dd>database name (multiple names are returned separated by &quot;/&quot;).</dd>
+<dt>$dbsize</dt>
+<dd>number of documents in the database (if multiple databases are being
+searched, this gives the total number).</dd>
+<dt>$def{MACRONAME,VALUE}</dt>
+<dd>define a macro which can take 0 to 9 arguments.  You can call it with
+<tt class="docutils literal"><span class="pre">$MACRONAME</span></tt> (if it take 0 arguments) or
+<tt class="docutils literal"><span class="pre">$MACRONAME{ARG1,ARG2,ARG3}</span></tt> is it takes arguments.  In value,
+arguments are available as <tt class="docutils literal"><span class="pre">$1</span></tt>, <tt class="docutils literal"><span class="pre">$2</span></tt>, ...  <tt class="docutils literal"><span class="pre">$9</span></tt>.  In the current
+implementation, macros can override OmegaScript commands, but this
+shouldn't be relied on.  It's recommended to use capitalised names for
+macros to avoid collision with future OmegaScript commands.</dd>
+<dt>$defaultop</dt>
+<dd>&quot;and&quot; or &quot;or&quot; (set from CGI variable DEFAULTOP).</dd>
+<dt>$env{VAR}</dt>
+<dd>lookup variable <tt class="docutils literal"><span class="pre">VAR</span></tt> in the environment.</dd>
+<dt>$error</dt>
+<dd>error message (e.g. if a database wouldn't open, or the query couldn't
+be parsed, or a Xapian exception has been thrown) or empty if there
+wasn't an error.</dd>
+<dt>$field{NAME}</dt>
+<dd><p class="first">lookup field in record.  If multiple instances of field exist the
+field values are returned tab separated, which means you can pass the
+results to <tt class="docutils literal"><span class="pre">$map</span></tt>, e.g.:</p>
+<pre class="last literal-block">
+$map{$field{keywords},&lt;b&gt;$html{$_}&lt;/b&gt;&lt;br&gt;}
+</pre>
+</dd>
+<dt>$filesize{SIZE}</dt>
+<dd>pretty printed filesize (e.g. <tt class="docutils literal"><span class="pre">1</span> <span class="pre">byte</span></tt>, <tt class="docutils literal"><span class="pre">100</span> <span class="pre">bytes</span></tt>, <tt class="docutils literal"><span class="pre">2.1K</span></tt>,
+<tt class="docutils literal"><span class="pre">4.0M</span></tt>, <tt class="docutils literal"><span class="pre">1.3G</span></tt>).  If <tt class="docutils literal"><span class="pre">SIZE</span></tt> is negative, expands to nothing.</dd>
+<dt>$filters</dt>
+<dd>serialised version of filter-like settings (currently <tt class="docutils literal"><span class="pre">B</span></tt>, <tt class="docutils literal"><span class="pre">DATE1</span></tt>,
+<tt class="docutils literal"><span class="pre">DATE2</span></tt>, <tt class="docutils literal"><span class="pre">DAYSMINUS</span></tt>, and <tt class="docutils literal"><span class="pre">DEFAULTOP</span></tt>) - set <tt class="docutils literal"><span class="pre">xFILTERS</span></tt> to this
+so that Omega can detect when the filters have changed and force the
+first page.</dd>
+<dt>$filterterms{PREFIX}</dt>
+<dd><p class="first">list of all terms in the database with prefix <tt class="docutils literal"><span class="pre">PREFIX</span></tt>, intended to
+be used to allow drop-down lists and sets of radio buttons to be
+dynamically generated, e.g.:</p>
+<pre class="last literal-block">
+Hostname:
+&lt;SELECT NAME=&quot;B&quot;&gt;
+&lt;OPTION VALUE=&quot;&quot;
+$if{$map{$cgilist{B},$eq{$substr{$_,0,1},H}},,SELECTED}&gt; Any
+$map{$filterterms{H},
+&lt;OPTION VALUE=&quot;$html{$_}&quot; $if{$find{$cgilist{B},$html{$_}},SELECTED}&gt;
+$html{$substr{$_,1}}
+&lt;/OPTION&gt;
+}
+&lt;/SELECT&gt;
+</pre>
+</dd>
+<dt>$find{LIST,STRING}</dt>
+<dd>returns the number of the first entry in <tt class="docutils literal"><span class="pre">LIST</span></tt> which is equal to
+<tt class="docutils literal"><span class="pre">STRING</span></tt> (starting from 0) or the empty string if no entry matches.</dd>
+<dt>$fmt</dt>
+<dd>name of current format (as set by CGI parameter``FMT``, or the default)</dd>
+<dt>$freq{term}</dt>
+<dd>frequency of a term</dd>
+<dt>$highlight{TEXT,LIST,[OPEN,[CLOSE]]}</dt>
+<dd>html escape string (&lt;&gt;&amp;, etc) and highlight any terms from <tt class="docutils literal"><span class="pre">LIST</span></tt>
+that appear in <tt class="docutils literal"><span class="pre">TEXT</span></tt> by enclosing them in <tt class="docutils literal"><span class="pre">OPEN</span></tt> and <tt class="docutils literal"><span class="pre">CLOSE</span></tt>.
+If <tt class="docutils literal"><span class="pre">OPEN</span></tt> is specified, but close is omitted, <tt class="docutils literal"><span class="pre">CLOSE</span></tt> defaults to
+the appropriate closing tag for <tt class="docutils literal"><span class="pre">OPEN</span></tt> (i.e. with a &quot;/&quot; in front and
+any parameters removed).  If both are omitted, then <tt class="docutils literal"><span class="pre">OPEN</span></tt> is set to:
+<tt class="docutils literal"><span class="pre">&lt;b</span> <span class="pre">style=&quot;color:black;background-color:#XXXXXX&quot;&gt;</span></tt> (where <tt class="docutils literal"><span class="pre">XXXXXX</span></tt>
+cycles through <tt class="docutils literal"><span class="pre">ffff66</span></tt> <tt class="docutils literal"><span class="pre">66ffff</span></tt> <tt class="docutils literal"><span class="pre">ff66ff</span></tt> <tt class="docutils literal"><span class="pre">6666ff</span></tt> <tt class="docutils literal"><span class="pre">ff6666</span></tt>
+<tt class="docutils literal"><span class="pre">66ff66</span></tt> <tt class="docutils literal"><span class="pre">ffaa33</span></tt> <tt class="docutils literal"><span class="pre">33ffaa</span></tt> <tt class="docutils literal"><span class="pre">aa33ff</span></tt> <tt class="docutils literal"><span class="pre">33aaff</span></tt>) and <tt class="docutils literal"><span class="pre">CLOSE</span></tt>
+is <tt class="docutils literal"><span class="pre">&lt;/b&gt;</span></tt>.</dd>
+<dt>$hit</dt>
+<dd>MSet index of current doc (first document in MSet is 0, so if
+you want to number the hits 1, 2, 3, ... use <tt class="docutils literal"><span class="pre">$add{$hit,1}</span></tt>).</dd>
+<dt>$hitlist{FMT}</dt>
+<dd>display hitlist using format <tt class="docutils literal"><span class="pre">FMT</span></tt>.</dd>
+<dt>$hitsperpage</dt>
+<dd>hits per page (as set by <tt class="docutils literal"><span class="pre">HITSPERPAGE</span></tt>, or the default)</dd>
+<dt>$hostname{URL}</dt>
+<dd>return the hostname from url <tt class="docutils literal"><span class="pre">URL</span></tt></dd>
+<dt>$html{TEXT}</dt>
+<dd>html escape string (<tt class="docutils literal"><span class="pre">&lt;&gt;&amp;&quot;</span></tt> are escaped to <tt class="docutils literal"><span class="pre">&amp;lt;</span></tt>, etc).</dd>
+<dt>$htmlstrip{TEXT}</dt>
+<dd>html strip tags from string (<tt class="docutils literal"><span class="pre">&lt;...&gt;</span></tt>, etc).</dd>
+<dt>$httpheader{NAME,VALUE}</dt>
+<dd><p class="first">specify an additional HTTP header to be generated by Omega.
+For example:</p>
+<pre class="literal-block">
+$httpheader{Cache-Control,max-age=0$.private}
+</pre>
+<p class="last">If <tt class="docutils literal"><span class="pre">Content-Type</span></tt> is not specified by the template, it defaults
+to <tt class="docutils literal"><span class="pre">text/html</span></tt>.  Headers must be specified before any other
+output from the OmegaScript template - any <tt class="docutils literal"><span class="pre">$httpheader{}</span></tt>
+commands found later in the template will be silently ignored.</p>
+</dd>
+<dt>$id</dt>
+<dd>document id of current document</dd>
+<dt>$last</dt>
+<dd>MSet index of last hit on this page</dd>
+<dt>$lastpage</dt>
+<dd>number of last page of hits (may be an underestimate unless
+<tt class="docutils literal"><span class="pre">$thispage</span></tt> == <tt class="docutils literal"><span class="pre">$lastpage</span></tt>).</dd>
+<dt>$length{LIST}</dt>
+<dd>number of entries in <tt class="docutils literal"><span class="pre">LIST</span></tt>.</dd>
+<dt>$list{LIST,...}</dt>
+<dd><p class="first">pretty print list. If <tt class="docutils literal"><span class="pre">LIST</span></tt> contains 1, 2, 3, 4 then:</p>
+<pre class="literal-block">
+&quot;$list{LIST,$. }&quot; = &quot;1, 2, 3, 4&quot;
+&quot;$list{LIST,$. , and }&quot; = &quot;1, 2, 3 and 4&quot;
+&quot;$list{LIST,List ,$. ,.}&quot; = &quot;List 1, 2, 3, 4.&quot;
+&quot;$list{LIST,List ,$. , and ,.}&quot; = &quot;List 1, 2, 3 and 4.&quot;
+</pre>
+<p class="last">NB <tt class="docutils literal"><span class="pre">$list</span></tt> returns an empty string for an empty list (so the
+last two forms aren't redundant as it may at first appear).</p>
+</dd>
+<dt>$log{LOGFILE[,ENTRY]}</dt>
+<dd>write to the log file <tt class="docutils literal"><span class="pre">LOGFILE</span></tt> in directory <tt class="docutils literal"><span class="pre">log_dir</span></tt> (set in
+<tt class="docutils literal"><span class="pre">omega.conf</span></tt>).  <tt class="docutils literal"><span class="pre">ENTRY</span></tt> is the OmegaScript for the log entry, and a
+linefeed is appended.  If <tt class="docutils literal"><span class="pre">LOGFILE</span></tt> cannot be opened for writing,
+nothing is done (and <tt class="docutils literal"><span class="pre">ENTRY</span></tt> isn't evaluated).  <tt class="docutils literal"><span class="pre">ENTRY</span></tt> defaults to
+a format similar to the Common Log Format used by webservers.</dd>
+<dt>$lookup{CDBFILE,KEY}</dt>
+<dd><p class="first">Return the tag corresponding to key <tt class="docutils literal"><span class="pre">KEY</span></tt> in the CDB file
+<tt class="docutils literal"><span class="pre">CDBFILE</span></tt>.  If the file doesn't exist, or <tt class="docutils literal"><span class="pre">KEY</span></tt> isn't a key in it,
+then <tt class="docutils literal"><span class="pre">$lookup</span></tt> expands to nothing.  CDB files are compact disk based
+hashtables.  For more information and public domain software which can
+create CDB files, please visit: <a class="reference external" href="http://www.corpit.ru/mjt/tinycdb.html">http://www.corpit.ru/mjt/tinycdb.html</a></p>
+<p>An example of how this might be used is to map top-level domains to
+country names.  Create a CDB file tld_en which maps &quot;fr&quot; to &quot;France&quot;,
+&quot;de&quot; to &quot;Germany&quot;, etc and then you can translate a country code to
+the English country name like so:</p>
+<pre class="literal-block">
+&quot;$or{$lookup{tld_en,$field{tld}},.$field{tld}}&quot;
+</pre>
+<p>If a tld isn't in the CDB (e.g. &quot;com&quot;), this will expand to &quot;.com&quot;.</p>
+<p class="last">You can take this further and prepare a set of CDBs mapping tld codes
+to names in other languages - tld_fr for French, tld_de for German.
+Then if you have the ISO language code in <tt class="docutils literal"><span class="pre">$opt{lang}</span></tt> you can
+replace <tt class="docutils literal"><span class="pre">tld_en</span></tt> with <tt class="docutils literal"><span class="pre">tld_$or{$opt{lang},en}</span></tt> and automatically
+translate into the currently set language, or English if no language is
+set.</p>
+</dd>
+<dt>$lower{TEXT}</dt>
+<dd>return UTF-8 text <tt class="docutils literal"><span class="pre">TEXT</span></tt> converted to lower case.</dd>
+<dt>$map{LIST,STUFF)</dt>
+<dd><p class="first">map a list into the evaluated argument. If <tt class="docutils literal"><span class="pre">LIST</span></tt> is
+1, 2 then:</p>
+<pre class="literal-block">
+&quot;$map{LIST,x$_ = $_; }&quot; = &quot;x1 = 1;     x2 = 2; &quot;
+</pre>
+<p class="last">Note that $map{} returns a list (this is a change from older
+versions). If the tabs are a problem, use $list{$map{...},}
+to get rid of them.</p>
+</dd>
+<dt>$msize</dt>
+<dd>estimated number of matches.</dd>
+<dt>$msizeexact</dt>
+<dd>return <tt class="docutils literal"><span class="pre">true</span></tt> if <tt class="docutils literal"><span class="pre">$msize</span></tt> is exact (or &quot;&quot; if it is estimated).</dd>
+<dt>$nice{number}</dt>
+<dd>pretty print integer (with thousands separator).</dd>
+<dt>$now</dt>
+<dd>number of seconds since the epoch (suitable for feeding to <tt class="docutils literal"><span class="pre">$date</span></tt>).
+Whether <tt class="docutils literal"><span class="pre">$now</span></tt> returns the same value for repeated calls in the same
+Omega search session is unspecified.</dd>
+<dt>$opt{OPT}</dt>
+<dd>lookup an option value (as set by <tt class="docutils literal"><span class="pre">$set</span></tt>).</dd>
+<dt>$opt{MAP,OPT}</dt>
+<dd>lookup an option within a map (as set by <tt class="docutils literal"><span class="pre">$setmap</span></tt>).</dd>
+<dt>$pack{NUMBER}</dt>
+<dd>converts a number to a 4 byte big-endian binary string</dd>
+<dt>$percentage</dt>
+<dd>percentage score of current hit (in range 1-100).</dd>
+<dt>$prettyterm{TERM}</dt>
+<dd>convert a term to &quot;user form&quot;, as it might be entered in a query.  If
+a matching term was entered in the query, just use that (the first
+occurrence if a term was generated multiple times from a query).
+Otherwise term prefixes are converted back to user forms as specified
+by <tt class="docutils literal"><span class="pre">$setmap{prefix,...}</span></tt> and <tt class="docutils literal"><span class="pre">$setmap{boolprefix,...}</span></tt>.</dd>
+<dt>$query</dt>
+<dd>query string (built from CGI <tt class="docutils literal"><span class="pre">P</span></tt> variable(s) plus possible added
+terms from <tt class="docutils literal"><span class="pre">ADD</span></tt> and <tt class="docutils literal"><span class="pre">X</span></tt>).</dd>
+<dt>$querydescription</dt>
+<dd>a human readable description of the <tt class="docutils literal"><span class="pre">Xapian::Query</span></tt> object which
+omega builds.  Mostly useful for debugging omega itself.</dd>
+<dt>$queryterms</dt>
+<dd>list of probabilistic query terms.</dd>
+<dt>$range{START,END}</dt>
+<dd>return list of values between <tt class="docutils literal"><span class="pre">START</span></tt> and <tt class="docutils literal"><span class="pre">END</span></tt>.</dd>
+<dt>$record[{ID}]</dt>
+<dd>raw record contents of document <tt class="docutils literal"><span class="pre">ID</span></tt>.</dd>
+<dt>$relevant[{ID}]</dt>
+<dd>document id <tt class="docutils literal"><span class="pre">ID</span></tt> if document is relevant, &quot;&quot; otherwise
+(side-effect: removes id from list of relevant documents
+returned by <tt class="docutils literal"><span class="pre">$relevants</span></tt>).</dd>
+<dt>$relevants</dt>
+<dd>return list of relevant documents</dd>
+<dt>$score</dt>
+<dd>score (0-10) of current hit (equivalent to <tt class="docutils literal"><span class="pre">$div{$percentage,10}</span></tt>).</dd>
+<dt>$set{OPT,VALUE}</dt>
+<dd><p class="first">set option value which may be looked up using <tt class="docutils literal"><span class="pre">$opt</span></tt>.  You can use
+options as variables (for example, to store values you want to reuse
+without recomputing).  There are also several which Omega looks at
+and which you can set or use:</p>
+<ul class="last simple">
+<li>decimal - the decimal separator (&quot;.&quot; by default - localised query
+templates may want to set this to &quot;,&quot;).</li>
+<li>thousand - the thousands separator (&quot;,&quot; by default - localised query
+templates may want to set this to &quot;.&quot;, &quot; &quot;, or &quot;&quot;).</li>
+<li>stemmer - which stemming language to use (&quot;english&quot; by default, other
+values are as understood by Xapian::Stem, so &quot;none&quot; means no
+stemming).</li>
+<li>stem_all - if &quot;true&quot;, then tell the query parser to stem all words,
+even capitalised ones.</li>
+<li>spelling - if &quot;true&quot;, then the query parser spelling correction
+feature is enabled and <tt class="docutils literal"><span class="pre">$suggestion</span></tt> can be used.</li>
+<li>fieldnames - if set to a non-empty value then the document data is
+parsed with each line being the value of a field, and the names
+are taken from entries in the list in fieldnames.  So
+<tt class="docutils literal"><span class="pre">$set{fieldnames,$split{title</span> <span class="pre">sample</span> <span class="pre">url}}</span></tt> will take the first
+line as the &quot;title&quot; field, the second as the &quot;sample&quot; field and the
+third as the &quot;url&quot; field.  Any lines without a corresponding field
+name will be ignored.  If unset or empty then the document data is
+parsed as one field per line in the format NAME=VALUE (where NAME is
+assumed not to contain '=').</li>
+<li>weighting - set the weighting scheme to use, and (optionally) the
+parameters to use if the weighting scheme supports them.  The syntax
+is a string consisting of the scheme name followed by any parameters,
+all separated by whitespace.  Any parameters not specified will use
+their default values.  Valid scheme names are <tt class="docutils literal"><span class="pre">bm25</span></tt>, <tt class="docutils literal"><span class="pre">bool</span></tt>, and
+<tt class="docutils literal"><span class="pre">trad</span></tt>.  e.g. <tt class="docutils literal"><span class="pre">$set{weighting,bm25</span> <span class="pre">1</span> <span class="pre">0.8}</span></tt></li>
+</ul>
+</dd>
+<dt>$setrelevant{docids}</dt>
+<dd>add documents into the RSet</dd>
+<dt>$setmap{MAP,NAME1,VALUE1,...}</dt>
+<dd><p class="first">set a map of option values which may be looked up against using
+<tt class="docutils literal"><span class="pre">$opt{MAP,NAME}</span></tt> (maps with the same name are merged rather than
+the old map being completely replaced).</p>
+<p>Omega uses the &quot;prefix&quot; map to set the prefixes understood by the query
+parser.  So if you wish to translate a prefix of &quot;author:&quot; to A and
+&quot;title:&quot; to &quot;S&quot; you would use:</p>
+<pre class="literal-block">
+$setmap{prefix,author,A,title,S}
+</pre>
+<p>Similarly, if you want to be able to restrict a search with a
+boolean filter from the text query (e.g. &quot;group:&quot; to &quot;G&quot;) you
+would use:</p>
+<pre class="literal-block">
+$setmap{boolprefix,group,G}
+</pre>
+<p>Don't be tempted to add whitespace around the commas, unless you want
+it to be included in the names and values!</p>
+<p class="last">Note: you must set the prefix maps before the query is parsed.  This
+is done as late as possible - the following commands require the
+query to be parsed: $prettyterm, $query, $querydescription, $queryterms,
+$relevant, $relevants, $setrelevant, $unstem, and also these commands
+require the match to be run which requires the query to be parsed:
+$freqs, $hitlist, $last, $lastpage, $msize, $msizeexact, $terms,
+$thispage, $time, $topdoc, $topterms.</p>
+</dd>
+<dt>$slice{LIST,POSITIONS}</dt>
+<dd><p class="first">returns the elements from <tt class="docutils literal"><span class="pre">LIST</span></tt> at the positions listed in the
+second list <tt class="docutils literal"><span class="pre">POSITIONS</span></tt>.  The first item is at position 0.
+Any positions which are out of range will be ignored.</p>
+<p>For example, if <tt class="docutils literal"><span class="pre">LIST</span></tt> contains a, b, c, d then:</p>
+<pre class="last literal-block">
+&quot;$slice{LIST,2}&quot; = &quot;c&quot;
+&quot;$slice{LIST,1 3}&quot; = &quot;b        d&quot;
+&quot;$slice{LIST,$range{1,3}}&quot; = &quot;b        c       d&quot;
+&quot;$slice{LIST,$range{-10,10}}&quot; = &quot;a     b       c       d&quot;
+</pre>
+</dd>
+</dl>
+<p>$split{STRING}</p>
+<dl class="docutils">
+<dt>$split{SPLIT,STRING}</dt>
+<dd><p class="first">returns a list by splitting the string <tt class="docutils literal"><span class="pre">STRING</span></tt> into elements at each
+occurrence of the substring <tt class="docutils literal"><span class="pre">SPLIT</span></tt>.  If <tt class="docutils literal"><span class="pre">SPLIT</span></tt> isn't specified,
+it defaults to a single space.  If <tt class="docutils literal"><span class="pre">SPLIT</span></tt> is empty, <tt class="docutils literal"><span class="pre">STRING</span></tt> is
+split into individual characters.</p>
+<p>For example:</p>
+<pre class="last literal-block">
+&quot;$split{one two three}&quot; = &quot;one two     three&quot;
+</pre>
+</dd>
+<dt>$stoplist</dt>
+<dd>returns a list of any terms in the query which were ignored as
+stopwords.</dd>
+<dt>$substr{STRING,START[,LENGTH]}</dt>
+<dd><p class="first">returns the substring of <tt class="docutils literal"><span class="pre">STRING</span></tt> which starts at position <tt class="docutils literal"><span class="pre">START</span></tt>
+(the start of the string being 0) and is <tt class="docutils literal"><span class="pre">LENGTH</span></tt> characters long (or
+to the end of <tt class="docutils literal"><span class="pre">STRING</span></tt> if <tt class="docutils literal"><span class="pre">STRING</span></tt> is less than
+<tt class="docutils literal"><span class="pre">START``+``LENGTH</span></tt> characters long).  If <tt class="docutils literal"><span class="pre">LENGTH</span></tt> is omitted, the
+substring from <tt class="docutils literal"><span class="pre">START</span></tt> to the end of <tt class="docutils literal"><span class="pre">STRING</span></tt> is returned.</p>
+<p>If <tt class="docutils literal"><span class="pre">START</span></tt> is negative, it counts back from the end of <tt class="docutils literal"><span class="pre">STRING</span></tt> (so
+<tt class="docutils literal"><span class="pre">$substr{hello,-1}</span></tt> is <tt class="docutils literal"><span class="pre">o</span></tt>).</p>
+<p class="last">If LENGTH is negative, it instead specifies the number of characters
+to omit from the end of STRING (so &quot;$substr{example,2,-2}&quot; is &quot;amp&quot;).
+Note that this means that &quot;$substr{STRING,0,N}$substr{STRING,N}&quot; is
+&quot;STRING&quot; whether N is positive, negative or zero.</p>
+</dd>
+<dt>$suggestion</dt>
+<dd>if <tt class="docutils literal"><span class="pre">$set{spelling,true}</span></tt> was done before the query was parsed, then
+<tt class="docutils literal"><span class="pre">$suggestion</span></tt> will return any suggested spelling corrected version
+of the query string.  If there are no spelling corrections, it will
+return an empty string.</dd>
+<dt>$terms</dt>
+<dd>list of matching terms for current hit.</dd>
+<dt>$thispage</dt>
+<dd>page number of current page.</dd>
+<dt>$time</dt>
+<dd>how long the match took (in seconds) e.g. <tt class="docutils literal"><span class="pre">0.078534</span></tt>.  If no timing
+information was available, returns an empty value.</dd>
+<dt>$topdoc</dt>
+<dd>first document on current page of hit list (counting from 0)</dd>
+<dt>$topterms[{N}]</dt>
+<dd>list of up to <tt class="docutils literal"><span class="pre">N</span></tt> top relevance feedback terms (default 16)</dd>
+<dt>$transform{REGEXP,SUBST,STRING}</dt>
+<dd><p class="first">transform string using Perl-compatible regular expressions.  This
+command is sort of like the Perl code:</p>
+<pre class="literal-block">
+my $string = STRING;
+$string =~ s/REGEXP/SUBST/;
+print $string;
+</pre>
+<p class="last">In SUBST, <tt class="docutils literal"><span class="pre">\1</span></tt> to <tt class="docutils literal"><span class="pre">\9</span></tt> are substituted by the 1st to 9th bracket
+grouping (or are empty if there is no such bracket grouping).  <tt class="docutils literal"><span class="pre">\\</span></tt>
+is a literal backslash.</p>
+</dd>
+<dt>$uniq{LIST}</dt>
+<dd>remove duplicates from a sorted list</dd>
+<dt>$unpack{BINARYSTRING}</dt>
+<dd><p class="first">converts a 4 byte big-endian binary string to a number, for example:</p>
+<pre class="last literal-block">
+$date{$unpack{$value{0}}}
+</pre>
+</dd>
+<dt>$unstem{TERM}</dt>
+<dd>maps a stemmed term to a list of the unstemmed forms of it used in
+the query</dd>
+<dt>$upper{TEXT}</dt>
+<dd>return UTF-8 text <tt class="docutils literal"><span class="pre">TEXT</span></tt> converted to upper case.</dd>
+<dt>$url{TEXT}</dt>
+<dd>url encode argument</dd>
+<dt>$value{VALUENO[,DOCID]}</dt>
+<dd>returns value number <tt class="docutils literal"><span class="pre">VALUENO</span></tt> for document <tt class="docutils literal"><span class="pre">DOCID</span></tt>.  If <tt class="docutils literal"><span class="pre">DOCID</span></tt>
+is omitted then the current hit is used (which only works inside
+<tt class="docutils literal"><span class="pre">$hitlist</span></tt>).</dd>
+<dt>$version</dt>
+<dd>omega version string - e.g. &quot;Xapian - omega 0.9.2&quot;</dd>
+<dt>$weight</dt>
+<dd>raw document weight of the current hit, as a floating point value
+(mostly useful for debugging purposes).</dd>
+</dl>
+</div>
+<div class="section" id="numeric-operators">
+<h1>Numeric Operators:</h1>
+<dl class="docutils">
+<dt>$add{A,B,...}</dt>
+<dd>add arguments together</dd>
+<dt>$div{A,B}</dt>
+<dd>returns int(A / B) (or &quot;divide by 0&quot; if B is zero)</dd>
+<dt>$mod{A,B}</dt>
+<dd>returns int(A % B) (or &quot;divide by 0&quot; if B is zero)</dd>
+<dt>$max{...}</dt>
+<dd>maximum of the arguments</dd>
+<dt>$min{...}</dt>
+<dd>minimum of the arguments</dd>
+<dt>$mul{A,B,...}</dt>
+<dd>multiply arguments together</dd>
+<dt>$muldiv{A,B,C}</dt>
+<dd>returns int((A * B) / C) (or &quot;divide by 0&quot; if C is zero)</dd>
+<dt>$sub{A,B}</dt>
+<dd>returns (A - B)</dd>
+</dl>
+</div>
+<div class="section" id="logical-operators">
+<h1>Logical Operators:</h1>
+<dl class="docutils">
+<dt>$and{...}</dt>
+<dd>logical short-cutting &quot;and&quot; of its arguments - evaluates
+arguments until it finds an empty one (and returns &quot;&quot;) or
+has evaluated them all (returns &quot;true&quot;)</dd>
+<dt>$eq{A,B}</dt>
+<dd>returns &quot;true&quot; if A and B are the same, &quot;&quot; otherwise.</dd>
+<dt>$ge{A,B}</dt>
+<dd>returns &quot;true&quot; if A is numerically &gt;= B.</dd>
+<dt>$gt{A,B}</dt>
+<dd>returns &quot;true&quot; if A is numerically &gt; B.</dd>
+<dt>$le{A,B}</dt>
+<dd>returns &quot;true&quot; if A is numerically &lt;= B.</dd>
+<dt>$lt{A,B}</dt>
+<dd>returns &quot;true&quot; if A is numerically &lt; B.</dd>
+<dt>$ne{A,B}</dt>
+<dd>returns &quot;true&quot; if A and B are not the same, &quot;&quot; if they are.</dd>
+<dt>$not{A}</dt>
+<dd>returns &quot;true&quot; for the empty string, &quot;&quot; otherwise.</dd>
+<dt>$or{...}</dt>
+<dd>logical short-cutting &quot;or&quot; of its arguments - returns first
+non-empty argument</dd>
+</dl>
+</div>
+<div class="section" id="control">
+<h1>Control:</h1>
+<dl class="docutils">
+<dt>$if{COND,THEN[,ELSE]}</dt>
+<dd>if <tt class="docutils literal"><span class="pre">COND</span></tt> is non-empty, evaluate <tt class="docutils literal"><span class="pre">THEN</span></tt>, otherwise evaluate else
+(if present)</dd>
+<dt>$include{FILE}</dt>
+<dd>include another OmegaScript file</dd>
+</dl>
+</div>
+</div>
+</body>
+</html>
